@@ -8,6 +8,8 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.IntakeSystem;
 
 public class IntakeCommand extends CommandBase {
@@ -28,7 +30,14 @@ public class IntakeCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    intakeSystem.setIntakeMotor(0);
+    double speed = 0;
+    if(RobotContainer.xbox.getRawButton(Constants.RIGHT_BUMPER)){
+      speed = -1;
+    }
+    if(RobotContainer.xbox.getRawButton(Constants.LEFT_BUMPER)){
+      speed = 1;
+    }
+    intakeSystem.setIntakeMotor(speed);
   }
 
   // Called once the command ends or is interrupted.

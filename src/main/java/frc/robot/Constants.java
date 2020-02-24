@@ -27,6 +27,10 @@ public final class Constants {
     public static final int MOTOR_CLIMB_ID = 5;
     public static final int MOTOR_INTAKE_ID = 6;
 
+    // SENSOR PORTS
+    public static final int SWITCH_ARM_UP_ID = 9;
+    public static final int SWITCH_ARM_DOWN_ID = 8;
+
     // CONTROLLER PORTS
     public static final int DRIVER_CONTROLLER_PORT = 0;
 
@@ -37,6 +41,14 @@ public final class Constants {
     public static final int RIGHT_STICK_Y = 5;
     public static final int LEFT_TRIGGER = 2;
     public static final int RIGHT_TRIGGER = 3;
+    public static final int LEFT_BUMPER = 5;
+    public static final int RIGHT_BUMPER = 6;
+    public static final int BUTTON_START = 8;
+    public static final int BUTTON_BACK = 7;
+    public static final int BUTTON_A = 1;
+    public static final int BUTTON_B = 2;
+    public static final int BUTTON_X = 3;
+    public static final int BUTTON_Y = 4;
     
     //HOW ZOOMER ARE YOU? (1 = max, 0 = no movement)
     public static final double SPEED_MULTIPLIER = 1;
