@@ -20,12 +20,12 @@ package frc.robot;
 public final class Constants {
     // CAN/MOTOR DEVICE PORTS
     public static final int MOTOR_LEFT_1_ID = 4;
-    public static final int MOTOR_LEFT_2_ID = 2;
+    public static final int MOTOR_LEFT_2_ID = 6;
     public static final int MOTOR_RIGHT_2_ID = 1;
     public static final int MOTOR_RIGHT_1_ID = 3;
     public static final int MOTOR_ARM_ID = 7;
     public static final int MOTOR_CLIMB_ID = 5;
-    public static final int MOTOR_INTAKE_ID = 6;
+    public static final int MOTOR_INTAKE_ID = 2;
 
     // SENSOR PORTS
     public static final int SWITCH_ARM_UP_ID = 9;
