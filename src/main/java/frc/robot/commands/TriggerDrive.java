@@ -39,11 +39,11 @@ public class TriggerDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if(RobotContainer.xbox.getBButtonPressed()){
-      driveTrain.setLeftMotors(0);
-      driveTrain.setRightMotors(0);
-      System.exit(0);
-    }
+    //if(RobotContainer.xbox.getBButtonPressed()){
+    //  driveTrain.setLeftMotors(0);
+    //  driveTrain.setRightMotors(0);
+    //  System.exit(0);
+    //}
     double triggerVal = RobotContainer.xbox.getRawAxis(Constants.RIGHT_TRIGGER)
         - RobotContainer.xbox.getRawAxis(Constants.LEFT_TRIGGER);
     
@@ -65,13 +65,13 @@ public class TriggerDrive extends CommandBase {
       }
     }
     double stick = RobotContainer.xbox.getRawAxis(Constants.LEFT_STICK_X);
-    if(triggerVal>0){
-      driveTrain.setLeftMotors(currentValue - stick);
-      driveTrain.setRightMotors(currentValue + stick);
+    if(triggerVal>=0){
+      driveTrain.setLeftMotors(-Constants.SPEED_MULTIPLIER * (currentValue + stick));
+      driveTrain.setRightMotors(-Constants.SPEED_MULTIPLIER * (currentValue - stick));
     }
     else{
-      driveTrain.setLeftMotors(-currentValue - stick);
-      driveTrain.setRightMotors(-currentValue + stick);
+      driveTrain.setLeftMotors(Constants.SPEED_MULTIPLIER * (currentValue + stick));
+      driveTrain.setRightMotors(Constants.SPEED_MULTIPLIER * (currentValue - stick));
     }
   }
 

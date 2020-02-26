@@ -35,18 +35,22 @@ public class ArmCommand extends CommandBase {
   public void execute() {
     //STOP THE MOTOR IF ARM WAS DOWN AND HAS NOW PRESSED THE BUTTON
     if(armSystem.getHighLimit() && position == 0){
+      System.out.println("HIGH!");
       position = 1;
       armSystem.setArmMotor(0);
     } //STOP THE MOTOR IF ARM WAS UP AND HAS NOW PRESSED THE BUTTON
     else if(armSystem.getLowLimit() && position == 1){
+      System.out.println("LOW!!");
       position=0;
       armSystem.setArmMotor(0);
     } //IF B BUTTON PRESSED AND ARM IS LOWERED, SET ARM TO MOVE UP
-    else if (RobotContainer.xbox.getRawButton(Constants.BUTTON_B) && position==0){
-      armSystem.setArmMotor(.25);
+    else if (RobotContainer.xbox.getRawButton(Constants.BUTTON_Y) && (position==0||position==-1)){
+      System.out.println("Y");
+      armSystem.setArmMotor(.1);
     } //IF A BUTTON PRESSED AND ARM IS RAISED, SET ARM TO MOVE DOWN
-    else if (RobotContainer.xbox.getRawButton(Constants.BUTTON_A) && position==1){
-      armSystem.setArmMotor(-.25);
+    else if (RobotContainer.xbox.getRawButton(Constants.BUTTON_A) && (position==0||position==-1)){
+      System.out.println("A");
+      armSystem.setArmMotor(-.3);
     }
   }
 

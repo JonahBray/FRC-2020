@@ -21,7 +21,7 @@ public class IntakeSystem extends SubsystemBase {
    */
   public IntakeSystem() {
     motor = new VictorSPX(Constants.MOTOR_INTAKE_ID);
-  }
+  } 
 
   @Override
   public void periodic() {
@@ -29,6 +29,12 @@ public class IntakeSystem extends SubsystemBase {
   }
 
   public void setIntakeMotor(double speed){
-    motor.set(ControlMode.PercentOutput, speed);
+    if(speed<0){
+      motor.setInverted(true);
+    }
+    else{
+      motor.setInverted(false);
+    }
+    motor.set(ControlMode.PercentOutput, Math.abs(speed));
   }
 }

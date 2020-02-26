@@ -31,7 +31,8 @@ public class ClimbCommand extends CommandBase {
   @Override
   public void execute() {
     double stick = RobotContainer.xbox.getRawAxis(Constants.RIGHT_STICK_Y);
-    climbSystem.setClimbMotor(stick);
+    //climbSystem.setClimbMotor(-Constants.SPEED_MULTIPLIER * stick);
+    climbSystem.setClimbMotor(0);
   }
 
   // Called once the command ends or is interrupted.

@@ -32,10 +32,12 @@ public class IntakeCommand extends CommandBase {
   public void execute() {
     double speed = 0;
     if(RobotContainer.xbox.getRawButton(Constants.RIGHT_BUMPER)){
-      speed = -1;
+      System.out.println("true");
+      speed = .25;
     }
-    if(RobotContainer.xbox.getRawButton(Constants.LEFT_BUMPER)){
-      speed = 1;
+    else if(RobotContainer.xbox.getRawButton(Constants.LEFT_BUMPER)){
+      System.out.println("false");
+      speed = -.25;
     }
     intakeSystem.setIntakeMotor(speed);
   }

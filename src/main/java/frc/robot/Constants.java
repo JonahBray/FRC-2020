@@ -20,12 +20,12 @@ package frc.robot;
 public final class Constants {
     // CAN/MOTOR DEVICE PORTS
     public static final int MOTOR_LEFT_1_ID = 4;
-    public static final int MOTOR_LEFT_2_ID = 6;
+    public static final int MOTOR_LEFT_2_ID = 3;
     public static final int MOTOR_RIGHT_2_ID = 1;
-    public static final int MOTOR_RIGHT_1_ID = 3;
+    public static final int MOTOR_RIGHT_1_ID = 2;
     public static final int MOTOR_ARM_ID = 7;
-    public static final int MOTOR_CLIMB_ID = 2;
-    public static final int MOTOR_INTAKE_ID = 5;
+    public static final int MOTOR_CLIMB_ID = 5;
+    public static final int MOTOR_INTAKE_ID = 6;
 
     // SENSOR PORTS
     public static final int SWITCH_ARM_UP_ID = 9;
@@ -51,7 +51,7 @@ public final class Constants {
     public static final int BUTTON_Y = 4;
     
     //HOW ZOOMER ARE YOU? (1 = max, 0 = no movement)
-    public static final double SPEED_MULTIPLIER = .25;
+    public static final double SPEED_MULTIPLIER = .75;
 
     //RAMP FORMULA VARIABLES
     public static final double RAMP_MULTIPLIER = 1.75;
