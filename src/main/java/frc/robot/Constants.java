@@ -51,7 +51,7 @@ public final class Constants {
     public static final int BUTTON_Y = 4;
     
     //HOW ZOOMER ARE YOU? (1 = max, 0 = no movement)
-    public static final double SPEED_MULTIPLIER = 1;
+    public static final double SPEED_MULTIPLIER = .25;
 
     //RAMP FORMULA VARIABLES
     public static final double RAMP_MULTIPLIER = 1.75;
