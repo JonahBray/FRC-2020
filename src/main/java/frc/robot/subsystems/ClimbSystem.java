@@ -15,7 +15,7 @@ import frc.robot.Constants;
 
 public class ClimbSystem extends SubsystemBase {
   private VictorSPX motor;
-
+  private double motorSpeed;
   /**
    * Creates a new ClimbSystem.
    */
@@ -30,5 +30,10 @@ public class ClimbSystem extends SubsystemBase {
 
   public void setClimbMotor(double speed){
     motor.set(ControlMode.PercentOutput,speed);
+    motorSpeed = speed;
+  }
+
+  public double getMotorSpeed(){
+    return motorSpeed;
   }
 }

@@ -23,12 +23,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DriveTrain driveTrain = new DriveTrain();
-  private final TestSubsystem testSubsystem = new TestSubsystem();
   private final IntakeSystem intakeSystem = new IntakeSystem();
   private final ArmSystem armSystem = new ArmSystem();
   private final ClimbSystem climbSystem = new ClimbSystem();
 
-  private final TestAutonomous testAutonomous = new TestAutonomous(testSubsystem);
+  private final DriveOffLineAutonomous autoCommand = new DriveOffLineAutonomous(driveTrain,intakeSystem,climbSystem,armSystem);
   private final FullRobotControl teleopCommand = new FullRobotControl(climbSystem,intakeSystem,armSystem,driveTrain);
 
   public static XboxController xbox;
@@ -58,7 +57,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return testAutonomous;
+    return autoCommand;
   }
 
   public Command getTeleOpCommand() {

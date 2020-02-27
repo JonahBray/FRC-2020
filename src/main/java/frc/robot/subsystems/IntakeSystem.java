@@ -15,7 +15,7 @@ import frc.robot.Constants;
 
 public class IntakeSystem extends SubsystemBase {
   private VictorSPX motor;
-
+  private double motorSpeed;
   /**
    * Creates a new IntakeSystem.
    */
@@ -35,6 +35,10 @@ public class IntakeSystem extends SubsystemBase {
     else{
       motor.setInverted(false);
     }
+    motorSpeed = speed;
     motor.set(ControlMode.PercentOutput, Math.abs(speed));
+  }
+  public double getMotorSpeed(){
+    return motorSpeed;
   }
 }

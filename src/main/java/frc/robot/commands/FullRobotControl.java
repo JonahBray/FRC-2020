@@ -20,7 +20,8 @@ public class FullRobotControl extends ParallelCommandGroup {
       new ClimbCommand(climbSystem),
       new IntakeCommand(intakeSystem),
       new ArmCommand(armSystem),
-      new TriggerDrive(driveTrain)
+      new TriggerDrive(driveTrain),
+      new DashCommand(climbSystem, intakeSystem, armSystem, driveTrain)
     );
   }
 }

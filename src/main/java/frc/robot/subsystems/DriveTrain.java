@@ -18,6 +18,7 @@ public class DriveTrain extends SubsystemBase {
   private VictorSPX motorLeft2;
   private VictorSPX motorRight1;
   private VictorSPX motorRight2;
+  private double leftMotorSpeed, rightMotorSpeed;
 
   /**
    * Creates a new DriveTrain.
@@ -35,12 +36,27 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public void setLeftMotors(double speed) {
-    motorLeft1.set(ControlMode.PercentOutput, -speed * Constants.SPEED_MULTIPLIER);
-    motorLeft2.set(ControlMode.PercentOutput, -speed * Constants.SPEED_MULTIPLIER);
+    speed = -speed * Constants.SPEED_MULTIPLIER;
+    leftMotorSpeed = speed;
+    //motorLeft1.set(ControlMode.PercentOutput, -speed * Constants.SPEED_MULTIPLIER);
+    //motorLeft2.set(ControlMode.PercentOutput, -speed * Constants.SPEED_MULTIPLIER);
+    motorLeft1.set(ControlMode.PercentOutput, speed);
+    motorLeft2.set(ControlMode.PercentOutput, speed);
   }
 
   public void setRightMotors(double speed) {
-    motorRight1.set(ControlMode.PercentOutput, speed * Constants.SPEED_MULTIPLIER);
-    motorRight2.set(ControlMode.PercentOutput, speed * Constants.SPEED_MULTIPLIER);
+    speed = speed * Constants.SPEED_MULTIPLIER;
+    rightMotorSpeed = speed;
+    //motorRight1.set(ControlMode.PercentOutput, speed * Constants.SPEED_MULTIPLIER);
+    //motorRight2.set(ControlMode.PercentOutput, speed * Constants.SPEED_MULTIPLIER);
+    motorRight1.set(ControlMode.PercentOutput, speed);
+    motorRight2.set(ControlMode.PercentOutput, speed);
+  }
+
+  public double getRightMotorSpeed(){
+    return rightMotorSpeed;
+  }
+  public double getLeftMotorSpeed(){
+    return leftMotorSpeed;
   }
 }

@@ -16,8 +16,9 @@ import frc.robot.Constants;
 
 public class ArmSystem extends SubsystemBase {
   private VictorSPX motor;
-  DigitalInput highLimit, lowLimit;
-
+  private DigitalInput highLimit, lowLimit;
+  private int position;
+  private double motorSpeed;
   /**
    * Creates a new ArmSystem.
    */
@@ -25,6 +26,8 @@ public class ArmSystem extends SubsystemBase {
     motor = new VictorSPX(Constants.MOTOR_ARM_ID);
     highLimit = new DigitalInput(Constants.SWITCH_ARM_UP_ID);
     lowLimit = new DigitalInput(Constants.SWITCH_ARM_DOWN_ID);
+    position = 0;
+    motorSpeed=0.0;
   }
 
   @Override
@@ -33,11 +36,21 @@ public class ArmSystem extends SubsystemBase {
   }
   public void setArmMotor(double speed){
     motor.set(ControlMode.PercentOutput, speed);
+    motorSpeed=speed;
   }
   public boolean getHighLimit(){
     return highLimit.get();
   }
   public boolean getLowLimit(){
     return lowLimit.get();
+  }
+  public void setPostion(int n){
+    position = n;
+  }
+  public int getPosition(){
+    return position;
+  }
+  public double getMotorSpeed(){
+    return motorSpeed;
   }
 }
