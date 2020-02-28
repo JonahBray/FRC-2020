@@ -30,7 +30,8 @@ public class RobotContainer {
   private final DriveOffLineAutonomous autoCommand = new DriveOffLineAutonomous(driveTrain,intakeSystem,climbSystem,armSystem);
   private final FullRobotControl teleopCommand = new FullRobotControl(climbSystem,intakeSystem,armSystem,driveTrain);
 
-  public static XboxController xbox;
+  public static XboxController xbox1;
+  public static XboxController xbox2;
 
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -47,7 +48,8 @@ public class RobotContainer {
    * passing it to a {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    xbox = new XboxController(Constants.DRIVER_CONTROLLER_PORT);
+    xbox1 = new XboxController(Constants.DRIVER_CONTROLLER_PORT);
+    xbox2 = new XboxController(Constants.DRIVER2_CONTROLLER_PORT);
   }
 
   /**

@@ -24,15 +24,16 @@ public final class Constants {
     public static final int MOTOR_RIGHT_2_ID = 1;
     public static final int MOTOR_RIGHT_1_ID = 2;
     public static final int MOTOR_ARM_ID = 7;
-    public static final int MOTOR_CLIMB_ID = 5;
-    public static final int MOTOR_INTAKE_ID = 6;
+    public static final int MOTOR_CLIMB_ID = 6;
+    public static final int MOTOR_INTAKE_ID = 8;
 
     // SENSOR PORTS
     public static final int SWITCH_ARM_UP_ID = 9;
     public static final int SWITCH_ARM_DOWN_ID = 8;
 
     // CONTROLLER PORTS
-    public static final int DRIVER_CONTROLLER_PORT = 0;
+    public static int DRIVER_CONTROLLER_PORT = 0;
+    public static int DRIVER2_CONTROLLER_PORT = 1;
 
     // CONTROLLER BUTTON
     public static final int LEFT_STICK_X = 0;
@@ -56,4 +57,8 @@ public final class Constants {
     //RAMP FORMULA VARIABLES
     public static final double RAMP_MULTIPLIER = 1.75;
     public static final double RAMP_SLOPE = .185;
+
+    //CONTROL VARIABLES
+    public static int NUM_DRIVERS = 1; //how many drivers (1 or 2 only)
+    public static boolean CLIMB_FREEDOM = false; //set to true in order to move Climber Down
 }

@@ -30,14 +30,21 @@ public class ClimbCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double stick = RobotContainer.xbox.getRawAxis(Constants.RIGHT_STICK_Y);
-    //climbSystem.setClimbMotor(-Constants.SPEED_MULTIPLIER * stick);
-    climbSystem.setClimbMotor(0);
+    if(RobotContainer.xbox1.getRawButton(Constants.BUTTON_A)){
+      climbSystem.setClimbMotor(.1);
+    }
+    else if(RobotContainer.xbox1.getRawButton(Constants.BUTTON_X) && Constants.CLIMB_FREEDOM){
+      climbSystem.setClimbMotor(-.1);
+    }
+    else{
+      climbSystem.setClimbMotor(0);
+    }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    climbSystem.setClimbMotor(0);
   }
 
   // Returns true when the command should end.

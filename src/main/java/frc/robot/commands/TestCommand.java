@@ -30,7 +30,7 @@ public class TestCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double stick = RobotContainer.xbox.getRawAxis(Constants.RIGHT_STICK_Y);
+    double stick = RobotContainer.xbox1.getRawAxis(Constants.RIGHT_STICK_Y);
     system.moveMotor(stick);
   }
 

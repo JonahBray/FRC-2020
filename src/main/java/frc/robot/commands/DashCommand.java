@@ -50,6 +50,10 @@ public class DashCommand extends CommandBase {
     SmartDashboard.putNumber("Drive Right Motors Speed", driveTrain.getRightMotorSpeed());
     //CONSTANTS 
     SmartDashboard.putNumber("Constant Speed Multiplier:",Constants.SPEED_MULTIPLIER);
+    SmartDashboard.putNumber("Driver 1 Port:",Constants.DRIVER_CONTROLLER_PORT);
+    SmartDashboard.putNumber("Driver 2 Port:", Constants.DRIVER2_CONTROLLER_PORT);
+    SmartDashboard.putNumber("Num Drivers (1-2 ONLY):", Constants.NUM_DRIVERS);
+    SmartDashboard.putBoolean("Climber Freedom:", Constants.CLIMB_FREEDOM);
   }
 
   // Called once the command ends or is interrupted.

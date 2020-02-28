@@ -13,7 +13,7 @@ import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.DriveTrain;
 
-public class TriggerDrive extends CommandBase {
+public class StickDrive extends CommandBase {
   private final DriveTrain driveTrain;
   private Timer timer;
   private double currentValue;
@@ -21,7 +21,7 @@ public class TriggerDrive extends CommandBase {
   /**
    * Creates a new TriggerDrive.
    */
-  public TriggerDrive(DriveTrain driveTrain) {
+  public StickDrive(DriveTrain driveTrain) {
     this.driveTrain = driveTrain;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(driveTrain);
@@ -44,34 +44,33 @@ public class TriggerDrive extends CommandBase {
     //  driveTrain.setRightMotors(0);
     //  System.exit(0);
     //}
-    double triggerVal = RobotContainer.xbox1.getRawAxis(Constants.RIGHT_TRIGGER)
-        - RobotContainer.xbox1.getRawAxis(Constants.LEFT_TRIGGER);
+    double stickVal = RobotContainer.xbox1.getRawAxis(Constants.LEFT_STICK_Y);
     
     if(driving){
-      if(triggerVal==0){
+      if(stickVal==0){
         driving=false;
         timer.stop();
         currentValue = 0;
       }
       else{
-        currentValue = rampSpeed(timer.get()) * Math.abs(triggerVal);
+        currentValue = rampSpeed(timer.get()) * Math.abs(stickVal);
       }
     }
     else{
-      if(triggerVal!=0){
+      if(stickVal!=0){
         driving=true;
         timer.reset();
         timer.start();
       }
     }
-    double stick = RobotContainer.xbox1.getRawAxis(Constants.LEFT_STICK_X);
-    if(triggerVal>=0){
-      driveTrain.setLeftMotors(-Constants.SPEED_MULTIPLIER * (currentValue + stick));
-      driveTrain.setRightMotors(-Constants.SPEED_MULTIPLIER * (currentValue - stick));
+    double turn = RobotContainer.xbox1.getRawAxis(Constants.RIGHT_STICK_X);
+    if(stickVal>=0){
+      driveTrain.setLeftMotors(-Constants.SPEED_MULTIPLIER * (currentValue + turn));
+      driveTrain.setRightMotors(-Constants.SPEED_MULTIPLIER * (currentValue - turn));
     }
     else{
-      driveTrain.setLeftMotors(Constants.SPEED_MULTIPLIER * (currentValue + stick));
-      driveTrain.setRightMotors(Constants.SPEED_MULTIPLIER * (currentValue - stick));
+      driveTrain.setLeftMotors(Constants.SPEED_MULTIPLIER * (currentValue + turn));
+      driveTrain.setRightMotors(Constants.SPEED_MULTIPLIER * (currentValue - turn));
     }
   }
 
