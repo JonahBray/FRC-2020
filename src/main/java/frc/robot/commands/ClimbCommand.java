@@ -34,10 +34,12 @@ public class ClimbCommand extends CommandBase {
     boolean xButton = RobotContainer.xbox1.getRawButton(Constants.BUTTON_X);
 
     if(aButton){
-      climbSystem.setClimbMotor(.1);
+      //SEE IF POWER NEEDS TO BE RAISED
+      //TEST DIF MOTOR
+      climbSystem.setClimbMotor(.4);
     }
     else if(xButton && Constants.CLIMB_FREEDOM){
-      climbSystem.setClimbMotor(-.1);
+      climbSystem.setClimbMotor(-.4);
     }
     else{
       climbSystem.setClimbMotor(0);
