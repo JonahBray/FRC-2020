@@ -33,17 +33,31 @@ public class ArmCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if(RobotContainer.xbox1.getRawButton(Constants.RIGHT_BUMPER) && !armSystem.getHighLimit()){
-      armSystem.setArmMotor(.1);
+    boolean RB = false;
+    boolean LB = false;
+
+    if(Constants.NUM_DRIVERS==1){
+      RB = RobotContainer.xbox1.getRawButton(Constants.RIGHT_BUMPER);
+      LB = RobotContainer.xbox1.getRawButton(Constants.LEFT_BUMPER);
     }
-    else if(RobotContainer.xbox1.getRawButton(Constants.LEFT_BUMPER) && !armSystem.getLowLimit()){
-      armSystem.setArmMotor(-.2);
+    else{
+      RB = RobotContainer.xbox2.getRawButton(Constants.RIGHT_BUMPER);
+      LB = RobotContainer.xbox2.getRawButton(Constants.LEFT_BUMPER);
+    }
+
+    System.out.println("LEFT: "+LB+" // RIGHT: "+RB);
+    
+    if(RB && armSystem.getHighLimit()){
+      armSystem.setArmMotor(.2);
+    }
+    else if(LB && armSystem.getLowLimit()){
+      armSystem.setArmMotor(-.3);
     }
     else{
       armSystem.setArmMotor(0.0);
     }
 
-    if(!armSystem.getHighLimit()){
+    if(armSystem.getHighLimit()){
       armSystem.setPostion(1);
     }
     else{

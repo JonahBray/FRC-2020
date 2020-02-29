@@ -25,7 +25,7 @@ public final class Constants {
     public static final int MOTOR_RIGHT_1_ID = 2;
     public static final int MOTOR_ARM_ID = 7;
     public static final int MOTOR_CLIMB_ID = 6;
-    public static final int MOTOR_INTAKE_ID = 8;
+    public static final int MOTOR_INTAKE_ID = 5;
 
     // SENSOR PORTS
     public static final int SWITCH_ARM_UP_ID = 9;
@@ -52,7 +52,8 @@ public final class Constants {
     public static final int BUTTON_Y = 4;
     
     //HOW ZOOMER ARE YOU? (1 = max, 0 = no movement)
-    public static final double SPEED_MULTIPLIER = .75;
+    public static double SPEED_MULTIPLIER = 1.0;
+    public static double SPEED_TURN_MULTIPLIER = .5;
 
     //RAMP FORMULA VARIABLES
     public static final double RAMP_MULTIPLIER = 1.75;

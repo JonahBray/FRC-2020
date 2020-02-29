@@ -39,12 +39,11 @@ public class StickDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //if(RobotContainer.xbox1.getBButtonPressed()){
-    //  driveTrain.setLeftMotors(0);
-    //  driveTrain.setRightMotors(0);
-    //  System.exit(0);
-    //}
-    double stickVal = RobotContainer.xbox1.getRawAxis(Constants.LEFT_STICK_Y);
+    if(RobotContainer.xbox1.getBButtonPressed()){
+     driveTrain.setLeftMotors(0);
+     driveTrain.setRightMotors(0);
+    }
+    double stickVal = - RobotContainer.xbox1.getRawAxis(Constants.LEFT_STICK_Y);
     
     if(driving){
       if(stickVal==0){
@@ -63,7 +62,7 @@ public class StickDrive extends CommandBase {
         timer.start();
       }
     }
-    double turn = RobotContainer.xbox1.getRawAxis(Constants.RIGHT_STICK_X);
+    double turn = RobotContainer.xbox1.getRawAxis(Constants.RIGHT_STICK_X) * Constants.SPEED_TURN_MULTIPLIER;
     if(stickVal>=0){
       driveTrain.setLeftMotors(-Constants.SPEED_MULTIPLIER * (currentValue + turn));
       driveTrain.setRightMotors(-Constants.SPEED_MULTIPLIER * (currentValue - turn));

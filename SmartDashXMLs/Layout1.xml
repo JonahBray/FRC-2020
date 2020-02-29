@@ -1,9 +1,25 @@
 <xml version="1.0">
 <dashboard>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="762" y="164"/>
+		<property name="Text" value="(Set to true to move climb down)"/>
+	</static-widget>
+	<widget field="Climber Freedom:" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="740" y="142"/>
+	</widget>
+	<widget field="Num Drivers (1-2 ONLY):" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="711" y="47"/>
+	</widget>
+	<widget field="Driver 2 Port:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="765" y="102"/>
+	</widget>
+	<widget field="Driver 1 Port:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="765" y="75"/>
+	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
 		<location x="2" y="96"/>
-		<width>630</width>
-		<height>361</height>
+		<width>611</width>
+		<height>458</height>
 		<property name="Camera Choice" value="USB Camera 0"/>
 		<property name="Selected Camera Path" value="10.81.77.2"/>
 	</static-widget>
@@ -14,27 +30,35 @@
 	<widget field="Drive Right Motors Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="104" y="42"/>
 		<height>20</height>
+		<property name="Editable" value="false"/>
 	</widget>
 	<widget field="Drive Left Motors Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="111" y="15"/>
+		<property name="Editable" value="false"/>
 	</widget>
 	<widget field="Intake Motor Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="501" y="39"/>
+		<property name="Editable" value="false"/>
 	</widget>
 	<widget field="Climb Motor Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="504" y="15"/>
+		<property name="Editable" value="false"/>
 	</widget>
 	<widget field="Arm Position" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="333" y="65"/>
+		<property name="Editable" value="false"/>
 	</widget>
 	<widget field="Arm Motor Speed:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="508" y="65"/>
+		<property name="Editable" value="false"/>
 	</widget>
 	<widget field="Low Switch:" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="337" y="39"/>
+		<property name="Editable" value="false"/>
 	</widget>
 	<widget field="High Switch:" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="334" y="15"/>
+		<property name="Editable" value="false"/>
 	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
 		<location x="4" y="15"/>
@@ -46,34 +70,41 @@
 </dashboard>
 <live-window>
 	<widget field="ClimbSystem" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<location x="0" y="115"/>
+		<location x="0" y="132"/>
 	</widget>
 	<widget field="DriveTrain" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<location x="0" y="92"/>
-	</widget>
-	<widget field="TestSubsystem" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<location x="0" y="69"/>
+		<location x="0" y="109"/>
 	</widget>
 	<widget field="ArmSystem" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<location x="0" y="46"/>
+		<location x="0" y="86"/>
+	</widget>
+	<widget field="IntakeSystem" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<location x="0" y="0"/>
 	</widget>
 	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<widget field="DigitalInput[8]" type="Digital Input" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
-			<location x="6" y="16"/>
-			<height>20</height>
-			<width>86</width>
+		<widget field="DigitalInput[8]" type="Table" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="0" y="0"/>
+			<height>0</height>
+			<width>0</width>
 		</widget>
-		<widget field="DigitalInput[9]" type="Digital Input" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
-			<location x="6" y="36"/>
-			<height>20</height>
-			<width>86</width>
+		<widget field="DigitalInput[8]" type="Table" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="0" y="0"/>
+			<height>0</height>
+			<width>0</width>
+		</widget>
+		<widget field="DigitalInput[9]" type="Table" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="0" y="0"/>
+			<height>0</height>
+			<width>0</width>
+		</widget>
+		<widget field="DigitalInput[9]" type="Table" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="0" y="0"/>
+			<height>0</height>
+			<width>0</width>
 		</widget>
 		<location x="0" y="23"/>
 		<width>98</width>
 		<height>62</height>
-	</widget>
-	<widget field="IntakeSystem" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
-		<location x="0" y="0"/>
 	</widget>
 </live-window>
 </xml>

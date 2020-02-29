@@ -39,9 +39,11 @@ public class ArmSystem extends SubsystemBase {
     motorSpeed=speed;
   }
   public boolean getHighLimit(){
+    //limit values are switched, when .get() is false the switch is pressed in, so invert it:
     return highLimit.get();
   }
   public boolean getLowLimit(){
+    //limit values are switched, when .get() is false the switch is pressed in, so invert it:
     return lowLimit.get();
   }
   public void setPostion(int n){

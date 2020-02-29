@@ -46,8 +46,8 @@ public class DriveOffLineAutonomous extends CommandBase {
   @Override
   public void execute() {
     if(!stop){
-      drive.setLeftMotors(.5 * Constants.SPEED_MULTIPLIER);
-      drive.setRightMotors(.5 * Constants.SPEED_MULTIPLIER);
+      drive.setLeftMotors(-.5 * Constants.SPEED_MULTIPLIER);
+      drive.setRightMotors(-.5 * Constants.SPEED_MULTIPLIER);
       if(timer.get()>1){
         stop=true;
         end(false);

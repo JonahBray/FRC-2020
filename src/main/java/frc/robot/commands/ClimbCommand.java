@@ -30,10 +30,13 @@ public class ClimbCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if(RobotContainer.xbox1.getRawButton(Constants.BUTTON_A)){
+    boolean aButton = RobotContainer.xbox1.getRawButton(Constants.BUTTON_A);
+    boolean xButton = RobotContainer.xbox1.getRawButton(Constants.BUTTON_X);
+
+    if(aButton){
       climbSystem.setClimbMotor(.1);
     }
-    else if(RobotContainer.xbox1.getRawButton(Constants.BUTTON_X) && Constants.CLIMB_FREEDOM){
+    else if(xButton && Constants.CLIMB_FREEDOM){
       climbSystem.setClimbMotor(-.1);
     }
     else{

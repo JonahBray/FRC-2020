@@ -30,8 +30,18 @@ public class IntakeCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double triggerVal = RobotContainer.xbox1.getRawAxis(Constants.RIGHT_TRIGGER)
-        - RobotContainer.xbox1.getRawAxis(Constants.LEFT_TRIGGER);
+    double RT = 0.0;
+    double LT = 0.0;
+    if(Constants.NUM_DRIVERS==1){
+      RT = RobotContainer.xbox1.getRawAxis(Constants.RIGHT_TRIGGER);
+      LT = RobotContainer.xbox1.getRawAxis(Constants.LEFT_TRIGGER);
+    }
+    else{
+      RT = RobotContainer.xbox2.getRawAxis(Constants.RIGHT_TRIGGER);
+      LT = RobotContainer.xbox2.getRawAxis(Constants.LEFT_TRIGGER);
+    }
+
+    double triggerVal = RT-LT;
     intakeSystem.setIntakeMotor(triggerVal);
   }
 
