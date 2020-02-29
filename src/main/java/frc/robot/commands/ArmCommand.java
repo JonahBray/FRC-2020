@@ -45,7 +45,7 @@ public class ArmCommand extends CommandBase {
       LB = RobotContainer.xbox2.getRawButton(Constants.LEFT_BUMPER);
     }
 
-    System.out.println("LEFT: "+LB+" // RIGHT: "+RB);
+    //System.out.println("LEFT: "+LB+" // RIGHT: "+RB);
     
     if(RB && armSystem.getHighLimit()){
       armSystem.setArmMotor(.2);

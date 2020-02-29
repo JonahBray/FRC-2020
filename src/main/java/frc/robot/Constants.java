@@ -61,5 +61,5 @@ public final class Constants {
 
     //CONTROL VARIABLES
     public static int NUM_DRIVERS = 1; //how many drivers (1 or 2 only)
-    public static boolean CLIMB_FREEDOM = false; //set to true in order to move Climber Down
+    public static boolean CLIMB_FREEDOM = true; //set to true in order to move Climber Down
 }
