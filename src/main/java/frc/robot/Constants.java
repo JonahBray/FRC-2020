@@ -52,12 +52,13 @@ public final class Constants {
     public static final int BUTTON_Y = 4;
     
     //HOW ZOOMER ARE YOU? (1 = max, 0 = no movement)
-    public static double SPEED_MULTIPLIER = 1.0;
+    public static double SPEED_MULTIPLIER = .7;
     public static double SPEED_TURN_MULTIPLIER = .5;
 
     //RAMP FORMULA VARIABLES
     public static final double RAMP_MULTIPLIER = 1.75;
     public static final double RAMP_SLOPE = .185;
+    public static final double RAMP_SLOPE_T = 1/3;
 
     //CONTROL VARIABLES
     public static int NUM_DRIVERS = 1; //how many drivers (1 or 2 only)

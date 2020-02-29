@@ -52,7 +52,7 @@ public class StickDrive extends CommandBase {
         currentValue = 0;
       }
       else{
-        currentValue = rampSpeed(timer.get()) * Math.abs(stickVal);
+        currentValue = rampSpeedT(timer.get()) * Math.abs(stickVal);
       }
     }
     else{
@@ -89,6 +89,17 @@ public class StickDrive extends CommandBase {
   //returns the ideal power output based on the time the trigger has been pressed (in seconds)
   private double rampSpeed(double time){
     double ans =Constants.RAMP_MULTIPLIER * Math.sqrt(Constants.RAMP_SLOPE * time);
+    if(ans>1.0){
+      ans=1.0;
+    }
+    if(ans<0){
+      ans=0;
+    }
+    return ans;
+  }
+
+  private double rampSpeedT(double time){
+    double ans =Constants.RAMP_SLOPE_T * time;
     if(ans>1.0){
       ans=1.0;
     }

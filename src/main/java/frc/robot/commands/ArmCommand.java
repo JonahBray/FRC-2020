@@ -48,10 +48,10 @@ public class ArmCommand extends CommandBase {
     //System.out.println("LEFT: "+LB+" // RIGHT: "+RB);
     
     if(RB && armSystem.getHighLimit()){
-      armSystem.setArmMotor(.2);
+      armSystem.setArmMotor(.4);
     }
     else if(LB && armSystem.getLowLimit()){
-      armSystem.setArmMotor(-.3);
+      armSystem.setArmMotor(-.5);
     }
     else{
       armSystem.setArmMotor(0.0);
