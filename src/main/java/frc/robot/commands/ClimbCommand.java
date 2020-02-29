@@ -36,10 +36,10 @@ public class ClimbCommand extends CommandBase {
     if(aButton){
       //SEE IF POWER NEEDS TO BE RAISED
       //TEST DIF MOTOR
-      climbSystem.setClimbMotor(.4);
+      climbSystem.setClimbMotor(.6);
     }
     else if(xButton && Constants.CLIMB_FREEDOM){
-      climbSystem.setClimbMotor(-.4);
+      climbSystem.setClimbMotor(-.6);
     }
     else{
       climbSystem.setClimbMotor(0);
