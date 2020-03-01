@@ -36,7 +36,7 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public void setLeftMotors(double speed) {
-    speed = -speed * Constants.SPEED_MULTIPLIER;
+    speed = -speed;
     leftMotorSpeed = speed;
     //motorLeft1.set(ControlMode.PercentOutput, -speed * Constants.SPEED_MULTIPLIER);
     //motorLeft2.set(ControlMode.PercentOutput, -speed * Constants.SPEED_MULTIPLIER);
@@ -45,7 +45,6 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public void setRightMotors(double speed) {
-    speed = speed * Constants.SPEED_MULTIPLIER;
     rightMotorSpeed = speed;
     //motorRight1.set(ControlMode.PercentOutput, speed * Constants.SPEED_MULTIPLIER);
     //motorRight2.set(ControlMode.PercentOutput, speed * Constants.SPEED_MULTIPLIER);
