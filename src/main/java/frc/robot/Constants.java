@@ -58,7 +58,7 @@ public final class Constants {
     //RAMP FORMULA VARIABLES
     public static final double RAMP_MULTIPLIER = 1.75;
     public static final double RAMP_SLOPE = .185;
-    public static final double RAMP_SLOPE_T = 1.0/1.5;
+    public static final double RAMP_SLOPE_T = 1.0/1.25;
 
     //CONTROL VARIABLES
     public static int NUM_DRIVERS = 2; //how many drivers (1 or 2 only)
