@@ -58,10 +58,10 @@ public class ArmCommand extends CommandBase {
     }
 
     if(armSystem.getHighLimit()){
-      armSystem.setPostion(1);
+      armSystem.setPosition(1);
     }
     else{
-      armSystem.setPostion(0);
+      armSystem.setPosition(0);
     }
     // //STOP THE MOTOR IF ARM WAS DOWN AND HAS NOW PRESSED THE BUTTON
     // //System.out.println("HIGH: "+armSystem.getHighLimit() +" // LOW: "+ armSystem.getLowLimit());

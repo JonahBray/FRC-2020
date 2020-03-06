@@ -46,7 +46,7 @@ public class ArmSystem extends SubsystemBase {
     //limit values are switched, when .get() is false the switch is pressed in, so invert it:
     return lowLimit.get();
   }
-  public void setPostion(int n){
+  public void setPosition(int n){
     position = n;
   }
   public int getPosition(){
