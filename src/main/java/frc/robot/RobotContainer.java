@@ -26,9 +26,9 @@ public class RobotContainer {
   private final IntakeSystem intakeSystem = new IntakeSystem();
   private final ArmSystem armSystem = new ArmSystem();
   private final ClimbSystem climbSystem = new ClimbSystem();
-
+  private final ColorSystem colorSystem = new ColorSystem();
   private final DriveOffLineAutonomous autoCommand = new DriveOffLineAutonomous(driveTrain,intakeSystem,climbSystem,armSystem);
-  private final FullRobotControl teleopCommand = new FullRobotControl(climbSystem,intakeSystem,armSystem,driveTrain);
+  private final FullRobotControl teleopCommand = new FullRobotControl(climbSystem,intakeSystem,armSystem, colorSystem, driveTrain);
 
   public static XboxController xbox1;
   public static XboxController xbox2;

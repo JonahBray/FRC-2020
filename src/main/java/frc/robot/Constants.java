@@ -26,10 +26,18 @@ public final class Constants {
     public static final int MOTOR_ARM_ID = 7;
     public static final int MOTOR_CLIMB_ID = 6;
     public static final int MOTOR_INTAKE_ID = 5;
+    public static final int MOTOR_LAZYSUSAN_ID = -1; // Change to actual port of motor once installed.
 
     // SENSOR PORTS
     public static final int SWITCH_ARM_UP_ID = 9;
     public static final int SWITCH_ARM_DOWN_ID = 8;
+
+    // LAZY SUSAN CONTROL
+    public static final boolean COLOR_SENSOR_I2C_ONBOARD = true; // Change this to false when using MXP port instead of onboard I2C ports.
+    public static final boolean COLOR_SENSOR_VOLTAGE_COMPENSATION = true; // Change to false if you don't want voltage compensation. Bad idea to change it to false.
+    public static final double COLOR_SENSOR_VOLTAGE_MAX = 11.87; // Caps the voltage for % output mode to 11.87 as 100%. If it's below it makes difference, if higher no difference as its cappped.
+    public static final double RED_TOLERANCE = 10, BLUE_TOLERANCE = 10, GREEN_TOLERANCE = 10; // TOLERANCES FOR THE COLOR SENSOR/COLORS
+    public static final int ROTATE_AMOUNT = 4; // How many times should it rotate when being automated rotation. 3-5 is what it said in game manual.
 
     // CONTROLLER PORTS
     public static int DRIVER_CONTROLLER_PORT = 0;
