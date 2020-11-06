@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.*;
+import frc.robot.commands.FullRobotControl;
 
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;
@@ -17,6 +18,7 @@ import edu.wpi.cscore.CvSink;
 import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.DriverStation;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,7 +30,7 @@ import edu.wpi.first.cameraserver.CameraServer;
 public class Robot extends TimedRobot {
   private Command autonomousCommand;
   private Command teleopCommand;
-  //private Command TestCommand;
+  // private Command TestCommand;
   private RobotContainer robotContainer;
 
   /**
@@ -52,7 +54,7 @@ public class Robot extends TimedRobot {
       Mat source = new Mat();
       Mat output = new Mat();
 
-      while(!Thread.interrupted()) {
+      while (!Thread.interrupted()) {
         if (cvSink.grabFrame(source) == 0) {
           continue;
         }
@@ -60,7 +62,7 @@ public class Robot extends TimedRobot {
         outputStream.putFrame(output);
       }
     }).start();
-   
+
   }
 
   /**
@@ -134,6 +136,35 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    String gameData;
+    gameData = DriverStation.getInstance().getGameSpecificMessage();
+    if (gameData.length() > 0) {
+      FullRobotControl control = (FullRobotControl) robotContainer.getTeleOpCommand();
+      switch (gameData.charAt(0)) {
+      case 'B':
+        // Blue case code
+        control.setColor(Color.BLUE);
+        break;
+      case 'G':
+        // Green case code
+        control.setColor(Color.GREEN);
+        break;
+      case 'R':
+        // Red case code
+        control.setColor(Color.RED);
+        break;
+      case 'Y':
+        // Yellow case code
+        control.setColor(Color.YELLOW);
+        break;
+      default:
+        // This is corrupt data
+        return;
+      }
+    } else {
+      // Code for no data received yet
+      return;
+    }
   }
 
   @Override
