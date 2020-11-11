@@ -18,6 +18,11 @@ package frc.robot;
  * wherever the constants are needed, to reduce verbosity.
  */
 public final class Constants {
+
+    //CONTROL VARIABLES
+    public static int NUM_DRIVERS = 2; //how many drivers (1 or 2 only)
+    public static boolean CLIMB_FREEDOM = false; //set to true in order to move Climber Down
+
     // CAN/MOTOR DEVICE PORTS
     public static final int MOTOR_LEFT_1_ID = 4;
     public static final int MOTOR_LEFT_2_ID = 3;
@@ -67,8 +72,4 @@ public final class Constants {
     public static final double RAMP_MULTIPLIER = 1.75;
     public static final double RAMP_SLOPE = .185;
     public static final double RAMP_SLOPE_T = 1.0/1.25;
-
-    //CONTROL VARIABLES
-    public static int NUM_DRIVERS = 2; //how many drivers (1 or 2 only)
-    public static boolean CLIMB_FREEDOM = false; //set to true in order to move Climber Down
 }
